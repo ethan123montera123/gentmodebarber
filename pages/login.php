@@ -1,7 +1,7 @@
 <?php
 
     if(isset($_POST['submit'])){
-        include "connection.php";
+        include "./connection.php";
         $email = $_POST['email'];
         $password = $_POST['password'];
     
