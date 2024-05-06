@@ -45,7 +45,7 @@
         <button id="view_more" type="button">VIEW MORE</button>
 
         <!-- SERVICES -->
-        <div class="services">
+        <div class="services" id="service">
             <!-- CARD TEMPLATE -->
             <div class="card card1">
                 <!-- image -->
@@ -126,7 +126,7 @@
     </section>
 
     <!-- WHAT IS GENTMODE -->
-    <section class="what_is_gentmode">
+    <section class="what_is_gentmode" id="about">
         <div class="filter">
             <p>WHAT IS GENTMODE BARBER?</p>
         </div>
@@ -147,20 +147,21 @@
     </section>
 
     <!-- CONTACT US -->
-    <section class="contact_us">
+    <section class="contact_us" id="contact">
         <!-- form container -->
         <div class="form_container">
             <!-- actual form -->
-            <form class="contact_form" action="submit">
+            <form class="contact_form" id="contact_form" action="../pages/process.php" method="post">
                 <label for="name">fullname (family name, first name, middle name) :</label>
-                <input id="name" type="text">
+                <input id="name" type="text" name="fullname">
                 <label for="email">email address : </label>
-                <input id="email" type="email">
-                <label for="number">contact number :</label>
-                <input id="number" type="text">
+                <input id="email" type="email" name="email">
+                <label for="number">Subject :</label>
+                <input id="number" type="text" name="subject">
                 <label for="message">message:</label>
                 <textarea name="message" id="message" rows="2"></textarea>
-                <button type="submit" id="form_submit">SUBMIT</button>
+                <div id="contact_message" style="display: none;"></div>
+                <input type="submit" id="form_submit" value="SUBMIT" name="submit">
             </form>
             <!-- social media -->
             <div class="socials">
@@ -187,16 +188,28 @@
         <div class="topic_container">
             <div class="topic">
                 <p class="title">Information</p>
-                <p class="subtopic">About</p>
-                <p class="subtopic">Services</p>
-                <p class="subtopic">Contact</p>
+                <a href="#about">
+                    <p class="subtopic">About</p>
+                </a>
+                <a href="#service">
+                    <p class="subtopic">Services</p>
+                </a>
+                <a href="#contact">
+                    <p class="subtopic">Contact</p>
+                </a>
             </div>
 
             <div class="topic">
                 <p class="title">Services</p>
-                <p class="subtopic">Haircut</p>
-                <p class="subtopic">Shave</p>
-                <p class="subtopic">Hair Treatment</p>
+                <a href="#service">
+                    <p class="subtopic">Haircut</p>
+                </a>
+                <a href="#service">
+                    <p class="subtopic">Shave</p>
+                </a>
+                <a href="#service">
+                    <p class="subtopic">Hair Treatment</p>
+                </a>
             </div>
 
             <div class="topic">
@@ -210,11 +223,11 @@
                 <p class="title">Sign up for our Newsletter</p>
                 <p class="subtopic">Get offers and discounts to your inbox</p>
 
-                <!-- newsletter form -->
-                <form class="newsletter_form" action="submit">
+                <form class="newsletter_form" id="newsletter_form">
                     <input id="email" type="email" placeholder="Your Email Address*">
                     <button id="subscribe_button" type="submit">SUBSCRIBE</button>
                 </form>
+                <div id="subscribe_message" style="display: none;">Subscribed successfully!</div>
             </div>
         </div>
     </section>
@@ -226,6 +239,26 @@
         <!-- insert socials if necessary -->
         <p>socials</p>
     </section>
+
+    <script>
+        document.getElementById("newsletter_form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("subscribe_message").style.display = "block";
+        });
+
+        document.getElementById("contact_form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("contact_message").style.display = "block";
+            document.getElementById("message").insertAdjacentHTML('afterend', '<div id="contact_message" style="display: block;">Message sent successfully!</div>');
+            document.getElementById("name").style.display = "none";
+            document.getElementById("email").style.display = "none";
+            document.getElementById("number").style.display = "none";
+            document.getElementById("message").style.display = "none";
+            document.getElementById("form_submit").style.display = "none";
+        });
+    </script>
 </body>
 
 </html>

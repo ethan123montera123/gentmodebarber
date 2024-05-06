@@ -21,9 +21,9 @@
     <!-- anchor tags -->
     <div class="anchors">
         <a href="#" id="home_anchor">Home</a>
-        <a href="#" id="services_anchor">Services</a>
-        <a href="#" id="about_anchor">About</a>
-        <a href="#" id="contact_anchor">Contact</a>
+        <a href="#service" id="services_anchor">Services</a>
+        <a href="#about" id="about_anchor">About</a>
+        <a href="#contact" id="contact_anchor">Contact</a>
     </div>
 
             <!-- Dropdown container -->
@@ -46,7 +46,7 @@
     </section>
 
     <!-- SERVICE PAGE -->
-    <section class="service_page">
+    <section class="service_page" id="service">
         <!-- left header -->
         <div class="our_services">
             <p id="p1">OUR HANDLING</p>
@@ -138,7 +138,7 @@
     </section>
 
     <!-- WHAT IS GENTMODE -->
-    <section class="what_is_gentmode">
+    <section class="what_is_gentmode" id="about">
         <div class="filter">
             <p>WHAT IS GENTMODE BARBER?</p>
         </div>
@@ -159,11 +159,11 @@
     </section>
 
     <!-- CONTACT US -->
-    <section class="contact_us">
+    <section class="contact_us" id="contact">
         <!-- form container -->
         <div class="form_container">
             <!-- actual form -->
-            <form class="contact_form" action="../pages/process.php" method="post">
+            <form class="contact_form" id="contact_form" action="../pages/process.php" method="post">
                 <label for="name">fullname (family name, first name, middle name) :</label>
                 <input id="name" type="text" name="fullname">
                 <label for="email">email address : </label>
@@ -172,6 +172,7 @@
                 <input id="number" type="text" name="subject">
                 <label for="message">message:</label>
                 <textarea name="message" id="message" rows="2"></textarea>
+                <div id="contact_message" style="display: none;"></div>
                 <input type="submit" id="form_submit" value="SUBMIT" name="submit">
             </form>
             <!-- social media -->
@@ -199,22 +200,22 @@
         <div class="topic_container">
             <div class="topic">
                 <p class="title">Information</p>
-                <p class="subtopic">About</p>
-                <p class="subtopic">Services</p>
-                <p class="subtopic">Contact</p>
+                <a href="#about"><p class="subtopic">About</p></a>
+                <a href="#service"><p class="subtopic">Services</p></a>
+                <a href="#contact"><p class="subtopic">Contact</p></a>
             </div>
 
             <div class="topic">
                 <p class="title">Services</p>
-                <p class="subtopic">Haircut</p>
-                <p class="subtopic">Shave</p>
-                <p class="subtopic">Hair Treatment</p>
+                <a href="#service"><p class="subtopic">Haircut</p></a>
+                <a href="#service"><p class="subtopic">Shave</p></a>
+                <a href="#service"><p class="subtopic">Hair Treatment</p></a>
             </div>
 
             <div class="topic">
                 <p class="title">Contact</p>
                 <p class="subtopic">Phone: (+63) 998 570 2003</p>
-                <p class="subtopic">email: email@domain.com</p>
+                <p class="subtopic">email: info@apexeldevelopment.com</p>
                 <p class="subtopic">Monday - Friday: 10AM - 8PM<br>Saturday - Sunday: 9AM - 9PM</p>
             </div>
 
@@ -223,10 +224,11 @@
                 <p class="subtopic">Get offers and discounts to your inbox</p>
 
                 <!-- newsletter form -->
-                <form class="newsletter_form" action="submit">
-                    <input id="email" type="email" placeholder="Your Email Address*">
-                    <button id="subscribe_button" type="submit">SUBSCRIBE</button>
-                </form>
+                <form class="newsletter_form" id="newsletter_form">
+                <input id="email" type="email" placeholder="Your Email Address*">
+                <button id="subscribe_button" type="submit">SUBSCRIBE</button>
+            </form>
+            <div id="subscribe_message" style="display: none;">Subscribed successfully!</div>
             </div>
         </div>
     </section>
@@ -238,6 +240,32 @@
         <!-- insert socials if necessary -->
         <p>socials</p>
     </section>
+
+    <script>
+    document.getElementById("newsletter_form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Here you can add your code to handle the form submission, such as sending the email to your server
+        
+        // For demonstration purposes, I'll just show the success message
+        document.getElementById("subscribe_message").style.display = "block";
+    });
+
+    document.getElementById("contact_form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Here you can add your code to handle the form submission, such as sending the form data to your server
+        
+        // For demonstration purposes, I'll just show the success message and hide the form fields
+        document.getElementById("contact_message").style.display = "block";
+        document.getElementById("message").insertAdjacentHTML('afterend', '<div id="contact_message" style="display: block;">Message sent successfully!</div>');
+        document.getElementById("name").style.display = "none";
+        document.getElementById("email").style.display = "none";
+        document.getElementById("number").style.display = "none";
+        document.getElementById("message").style.display = "none";
+        document.getElementById("form_submit").style.display = "none";
+    });
+    </script>
 
 </body>
 
