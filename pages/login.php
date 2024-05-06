@@ -12,6 +12,7 @@
         if($count == 1){
             $row = mysqli_fetch_assoc($result);
             if(password_verify($password, $row['password']) == true){
+                $_SESSION['logged_in'] = true;
                 header("Location: home.php");
                 exit();
             }else{
@@ -32,6 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <link rel="stylesheet" href="../style/login.css">
+    <link rel="icon" type="image" href="../assets/images/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 

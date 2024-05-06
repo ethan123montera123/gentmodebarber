@@ -1,7 +1,6 @@
 <?php
 
 
-
     if(isset($_POST['submit'])){
         include "./connection.php";
         $username = $_POST['name'];
@@ -47,6 +46,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <link rel="stylesheet" href="../style/login.css">
+    <link rel="icon" type="image" href="../assets/images/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
