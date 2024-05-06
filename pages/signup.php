@@ -3,7 +3,7 @@
 
 
     if(isset($_POST['submit'])){
-        include "connection.php";
+        include "./connection.php";
         $username = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
@@ -33,7 +33,7 @@
                 exit();
             }
         }else{
-            echo '<script>alert("User or email taken"); window.location.href = "signup.php";</script>';
+            echo '<script>alert("User or email taken"); window.location.href = "index.html";</script>';
             exit();
         }
     }

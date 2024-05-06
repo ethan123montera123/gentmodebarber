@@ -98,8 +98,8 @@ nav {
     left: 0;
 }
 
-#book_button {
-    position: absolute;
+#book_button, #login_button {
+    /* position: absolute; */
     right: 2vw;
     font-size: 1.8rem;
     color: white;
@@ -108,6 +108,10 @@ nav {
     border-radius: .5rem;
     padding: 1.5vh 4vh;
     cursor: pointer;
+}
+
+#login_button {
+    position: absolute;
 }
 
 #company_name {
