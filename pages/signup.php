@@ -1,5 +1,7 @@
 <?php
 
+
+
     if(isset($_POST['submit'])){
         include "./connection.php";
         $username = $_POST['name'];
@@ -31,7 +33,7 @@
                 exit();
             }
         }else{
-            echo '<script>alert("User or email taken"); window.location.href = "../index.html";</script>';
+            echo '<script>alert("User or email taken"); window.location.href = "index.html";</script>';
             exit();
         }
     }
