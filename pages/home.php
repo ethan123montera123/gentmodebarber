@@ -47,7 +47,6 @@
         <p id="company_name">GENTMODE</br>BARBER</p>
     </section>
 
-    <!-- SERVICE PAGE -->
     <section class="service_page" id="service">
         <!-- left header -->
         <div class="our_services">
@@ -55,20 +54,20 @@
             <p id="p2">OUR SERVICES</p>
         </div>
 
-        <!-- VIEW MORE -->
-        <button id="view_more" type="button">VIEW MORE</button>
+        <!-- VIEW MORE
+        <button id="view_more" type="button">VIEW MORE</button> -->
 
         <!-- SERVICES -->
         <div class="services">
             <!-- CARD TEMPLATE -->
             <div class="card card1">
                 <!-- image -->
-                <img src="../assets/images/shave.png" alt="GentMode Shave">
+                <img src="../assets/images/gentmode_cut.jpg" alt="GentMode Shave">
 
                 <!-- content -->
                 <div class="content">
-                    <p class="title">Shave</p>
-                    <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <p class="title">Gentmode Cut</p>
+                    <p class="description">Shampoo, Back massage, hot towel.</p>
                 </div>
 
                 <!-- icon w/shadow-->
@@ -82,12 +81,12 @@
 
             <div class="card card2">
                 <!-- image -->
-                <img src="../assets/images/shave.png" alt="GentMode Shave">
+                <img src="../assets/images/bald_cut.jpg" alt="GentMode Shave">
 
                 <!-- content -->
                 <div class="content">
-                    <p class="title">Shave</p>
-                    <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <p class="title">Bald Cut</p>
+                    <p class="description">Back massage, hot towel.</p>
                 </div>
 
                 <!-- icon w/shadow-->
@@ -101,12 +100,12 @@
 
             <div class="card card3">
                 <!-- image -->
-                <img src="../assets/images/shave.png" alt="GentMode Shave">
+                <img src="../assets/images/gentmode_shave.jpg" alt="GentMode Shave">
 
                 <!-- content -->
                 <div class="content">
-                    <p class="title">Shave</p>
-                    <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <p class="title">Gentmode Shave</p>
+                    <p class="description">Facial pleasure.</p>
                 </div>
 
                 <!-- icon w/shadow-->
@@ -120,12 +119,12 @@
 
             <div class="card card4">
                 <!-- image -->
-                <img src="../assets/images/shave.png" alt="GentMode Shave">
+                <img src="../assets/images/treatment.jpg" alt="GentMode Shave">
 
                 <!-- content -->
                 <div class="content">
-                    <p class="title">Shave</p>
-                    <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <p class="title">Hair Treatment</p>
+                    <p class="description">Anti-dandruff treatment.</p>
                 </div>
 
                 <!-- icon w/shadow-->
@@ -153,10 +152,7 @@
 
         <div class="story">
             <p class="title">Our Story</p>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a euismod orci. Vestibulum hendrerit dapibus consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam sit amet mi vitae augue
-                pulvinar pulvinar quis luctus nibh. Etiam mattis felis id justo hendrerit, ac interdum magna rutrum. Nunc eget sollicitudin eros. Nunc sed dapibus felis. Suspendisse tristique semper feugiat. Maecenas et ornare massa. Curabitur laoreet
-                risus sed diam gravida blandit. Phasellus eget ex vestibulum, dapibus magna eget, pharetra odio. In nec dui sit amet ligula venenatis vehicula. Fusce tortor nisl, scelerisque quis arcu eu, fermentum condimentum libero. Donec quis sodales
-                eros. Integer laoreet arcu id quam finibus fermentum. Fusce consectetur odio non urna posuere interdum.</p>
+            <p class="description">Nestled in the vibrant heart of Cebu, GentMode Barbers has been a beacon of style and sophistication for a year now. Our barbershop stands as a cornerstone of grooming excellence in this bustling city, offering a haven for gentlemen seeking more than just a haircut. With a year of service under our belt, we've perfected the art of blending classic barbering techniques with contemporary trends, ensuring every client leaves feeling confident and refreshed. Situated in the center of Cebu, our location is not just convenient, but also emblematic of our commitment to serving the diverse needs of our community. Whether it's a classic cut or a modern style, GentMode Barbers invites you to experience the epitome of grooming excellence right here in the heart of Cebu.</p>
         </div>
     </section>
 
@@ -227,10 +223,10 @@
 
                 <!-- newsletter form -->
                 <form class="newsletter_form" id="newsletter_form">
-                <input id="email" type="email" placeholder="Your Email Address*">
-                <button id="subscribe_button" type="submit">SUBSCRIBE</button>
-            </form>
-            <div id="subscribe_message" style="display: none;">Subscribed successfully!</div>
+                    <input class="news_email" id="email" type="email" placeholder="Your Email Address*">
+                    <button id="subscribe_button" type="submit">SUBSCRIBE</button>
+                </form>
+                <div id="subscribe_message" style="display: none;">Subscribed successfully!</div>
             </div>
         </div>
     </section>
@@ -243,31 +239,7 @@
         <p>socials</p>
     </section>
 
-    <script>
-    document.getElementById("newsletter_form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-
-        // Here you can add your code to handle the form submission, such as sending the email to your server
-        
-        // For demonstration purposes, I'll just show the success message
-        document.getElementById("subscribe_message").style.display = "block";
-    });
-
-    document.getElementById("contact_form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-
-        // Here you can add your code to handle the form submission, such as sending the form data to your server
-        
-        // For demonstration purposes, I'll just show the success message and hide the form fields
-        document.getElementById("contact_message").style.display = "block";
-        document.getElementById("message").insertAdjacentHTML('afterend', '<div id="contact_message" style="display: block;">Message sent successfully!</div>');
-        document.getElementById("name").style.display = "none";
-        document.getElementById("email").style.display = "none";
-        document.getElementById("number").style.display = "none";
-        document.getElementById("message").style.display = "none";
-        document.getElementById("form_submit").style.display = "none";
-    });
-    </script>
+    <script src="../script/main.js"></script>
 
 </body>
 
