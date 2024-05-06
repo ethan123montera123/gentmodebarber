@@ -40,13 +40,13 @@
         <h2 class="text-2xl font-semibold mb-6">Let's Begin</h2>
         <form  name="form" action="login.php" method="POST">
             <div class="mb-6">
-                <input type="email" id="email" name="email" placeholder="Email" class="mt-1 p-2 block w-full rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                <input type="email" id="email" name="email" placeholder="Email" class="mt-1 p-2 block w-full rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
             </div>
             <div class="mb-6">
-                <input type="password" id="password" name="password" placeholder="Password" class="mt-1 p-2 block w-full rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                <input type="password" id="password" name="password" placeholder="Password" class="mt-1 p-2 block w-full rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
             </div>
             <div class="mb-6">
-                <input type="submit" name="submit" value="Login" class="bg-indigo-500 text-white w-full py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">
+                <input type="submit" name="submit" value="Login" class="bg-indigo-500 text-white w-full py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600" required>
             </div>
         </form>
         <div class="text-center">
