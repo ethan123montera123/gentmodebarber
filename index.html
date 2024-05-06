@@ -224,7 +224,7 @@
                 <p class="subtopic">Get offers and discounts to your inbox</p>
 
                 <form class="newsletter_form" id="newsletter_form">
-                    <input id="email" type="email" placeholder="Your Email Address*">
+                    <input class ="news_email" id="email" type="email" placeholder="Your Email Address*">
                     <button id="subscribe_button" type="submit">SUBSCRIBE</button>
                 </form>
                 <div id="subscribe_message" style="display: none;">Subscribed successfully!</div>
@@ -244,7 +244,13 @@
         document.getElementById("newsletter_form").addEventListener("submit", function(event) {
             event.preventDefault();
 
-            document.getElementById("subscribe_message").style.display = "block";
+            const val = document.querySelector(".news_email");
+            if(val.value) {
+                document.getElementById("subscribe_message").style.display = "block";
+            }
+            else {
+                document.getElementById("subscribe_message").style.display = "none";
+            }
         });
 
         document.getElementById("contact_form").addEventListener("submit", function(event) {
