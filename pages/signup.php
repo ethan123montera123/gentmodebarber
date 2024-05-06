@@ -1,7 +1,7 @@
 <?php
 
     if(isset($_POST['submit'])){
-        include "connection.php";
+        include "./connection.php";
         $username = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
@@ -18,8 +18,8 @@
 
         if($count_user == 0 && $count_email == 0){
             if($password == $cpassword){
-                //$hash = password_hash($password, PASSWORD_DEFAULT);
-                $sql = "INSERT INTO signuo (username, email, password, phone) VALUES ('$username', '$email', '$password', '$phone')";
+                $hash = password_hash($password, PASSWORD_DEFAULT);
+                $sql = "INSERT INTO signuo (username, email, password, phone) VALUES ('$username', '$email', '$hash', '$phone')";
                 if(mysqli_query($conn, $sql)){
                     echo '<script>alert("Registration successful!"); window.location.href = "home.php";</script>';
                     exit();
@@ -31,7 +31,7 @@
                 exit();
             }
         }else{
-            echo '<script>alert("User or email taken"); window.location.href = "index.html";</script>';
+            echo '<script>alert("User or email taken"); window.location.href = "../index.html";</script>';
             exit();
         }
     }
