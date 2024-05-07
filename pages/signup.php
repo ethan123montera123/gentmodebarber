@@ -32,7 +32,7 @@
                 exit();
             }
         }else{
-            echo '<script>alert("User or email taken"); window.location.href = "index.html";</script>';
+            echo '<script>alert("User or email taken"); window.location.href = "../index.html";</script>';
             exit();
         }
     }

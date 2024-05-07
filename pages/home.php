@@ -34,12 +34,14 @@
             <i class="fas fa-user"></i>
             <!-- Dropdown content -->
             <div class="dropdown-content">
-                <a href="../pages/account.php">Account</a>
+                <!--<a href="../pages/account.php">Account</a>-->
                 <a href="../pages/logout.php">Logout</a>
             </div>
         </div>
 
-        <button id="book_button" type="button">Book Now</button>
+        <a href="./booking.php">
+            <button id="book_button" type="button">Book Now</button>
+        </a>
     </div>  
 </nav>
 
